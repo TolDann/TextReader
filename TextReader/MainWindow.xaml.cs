@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace TextReader
 {
@@ -23,6 +25,19 @@ namespace TextReader
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        void ClickButtonOpenFile(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFildeDialog = new OpenFileDialog();
+            if (openFildeDialog.ShowDialog() == true)
+            {
+                string fileName = openFildeDialog.FileName;
+
+                TextFile textFile = new TextFile(fileName);
+                textFile.ShowFileInTextBlock(txtBlock_textDisplay);
+            }
+            
         }
     }
 }
