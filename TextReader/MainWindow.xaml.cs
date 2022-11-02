@@ -32,9 +32,7 @@ namespace TextReader
             OpenFileDialog openFildeDialog = new OpenFileDialog();
             if (openFildeDialog.ShowDialog() == true)
             {
-                string fileName = openFildeDialog.FileName;
-
-                TextFile textFile = new TextFile(fileName);
+                TextFile textFile = new TextFile(openFildeDialog.FileName);
                 textFile.ShowFileInTextBlock(txtBlock_textDisplay);
             }
             
