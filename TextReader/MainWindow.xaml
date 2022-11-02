@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextReader"
         mc:Ignorable="d"
-        Title="TextReader" Height="450" Width="800">
-    <Grid>
+        Title="TextReader" Height="650" Width="1000">
+    <Grid Background="SlateGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -22,5 +22,19 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
         </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="1" Grid.RowSpan="2" Grid.Column="1">
+            <TabItem Header="Datei">
+                <StackPanel>
+                    <Label>Datei wählen:</Label>
+                    <Button Name="btn_openFile" Click="ClickButtonOpenFile">Öffnen...</Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <ScrollViewer Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3">
+            <Label BorderBrush="DimGray" BorderThickness="5" Background="White">
+            <TextBlock Name="txtBlock_textDisplay" Margin="5"></TextBlock>
+            </Label>
+        </ScrollViewer>
     </Grid>
 </Window>
